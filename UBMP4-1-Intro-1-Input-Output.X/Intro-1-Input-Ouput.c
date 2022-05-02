@@ -53,6 +53,34 @@ int main(void)
         }
         
         // Add code for your Program Analysis and Programming Activities here:
+        // Make a tone while SW5 is held
+       if(SW5 == 0)
+       {
+           for(int i = 0; i < 300; i++) {
+               BEEPER = !BEEPER;
+               __delay_us(1000);
+           }
+ 
+           __delay_ms(20);
+ 
+           for(int i = 0; i < 300; i++) {
+               BEEPER = !BEEPER;
+               __delay_us(1000);
+           }
+     
+     
+       }
+       //change pitch
+       if(SW4 == 0)
+       {
+      
+      for(int i = 0; i < 300; i++) {
+       __delay_us (2000);
+      
+      }
+ 
+       }
+
 
         // Activate bootloader if SW1 is pressed.
         if(SW1 == 0)
