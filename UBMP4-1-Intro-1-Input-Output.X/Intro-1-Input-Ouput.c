@@ -67,9 +67,19 @@ int main(void)
                BEEPER = !BEEPER;
                __delay_us(1000);
            }
+    
+           __delay_ms(20);
+
+            for(int i = 0; i < 300; i++) {
+               BEEPER = !BEEPER;
+               __delay_us(1000);
+           }
+    
      
-     
+
+
        }
+       
        //change pitch
        if(SW4 == 0)
        {
