@@ -19,9 +19,24 @@
 
 // TODO Set linker ROM ranges to 'default,-0-7FF' under "Memory model" pull-down.
 // TODO Set linker code offset to '800' under "Additional options" pull-down.
+#define PAUSE __delay_ms(220);
+#define REST __delay_ms(500);
+#define DUR 230
+#define _C playnote(DUR, 183206);
+#define _D playnote(DUR, 163265);
+#define _E playnote(DUR, 150);
+#define  E playnote(310, 150);
+#define _G playnote(DUR, 50);
 
 // The main function is required, and the program begins executing from here.
-
+void playnote(int duration, int period )
+{
+    for(int i = 0; i < duration; i++) {
+               BEEPER = !BEEPER;
+               ;
+         for (int j = 0; j < period; j++);
+     }
+}
 int main(void)
 {
     // Configure oscillator and I/O ports. These functions run once at start-up.
@@ -53,87 +68,33 @@ int main(void)
         }
         
         // Add code for your Program Analysis and Programming Activities here:
+        
+        Jingle bells
+        
         // Make a tone while SW5 is held
        if(SW5 == 0)
        {
-           for(int i = 0; i < 300; i++) {
-               BEEPER = !BEEPER;
-               __delay_us(1000);
-           }
- 
-           __delay_ms(20);
- 
-           for(int i = 0; i < 300; i++) {
-               BEEPER = !BEEPER;
-               __delay_us(1000);
-           }
-    
-           __delay_ms(20);
+           _E PAUSE _E PAUSE _E 
+           REST
+           _E PAUSE _E PAUSE _E 
+           REST
+           _E PAUSE _G PAUSE _C PAUSE _D PAUSE E
+           REST
+           REST
 
-            for(int i = 0; i < 300; i++) {
-               BEEPER = !BEEPER;
-               __delay_us(1000);
-           }
-
-           __delay_ms(300);
-
-
-           for(int i = 0; i < 300; i++) {
-               BEEPER = !BEEPER;
-               __delay_us(1000);
-           }
- 
-           __delay_ms(20);
- 
-           for(int i = 0; i < 300; i++) {
-               BEEPER = !BEEPER;
-               __delay_us(1000);
-           }
-    
-           __delay_ms(20);
-
-            for(int i = 0; i < 300; i++) {
-               BEEPER = !BEEPER;
-               __delay_us(1000);
-           }
-
-           __delay_ms(300);
-
-           for(int i = 0; i < 300; i++) {
-               BEEPER = !BEEPER;
-               __delay_us(1000);
-           }
-
-           __delay_ms(20);
-
-           for(int i = 0; i < 300; i++) {
-               BEEPER = !BEEPER;
-               __delay_us(1500);
-           }
-
-           __delay_ms(20);
-
-           for(int i = 0; i < 300; i++) {
-               BEEPER = !BEEPER;
-               __delay_us(1250);
-           }
-    
-     
-
-
+       
        }
        
-       //change pitch
+       Padoru
+
+       // Make a tone while SW4 is held
        if(SW4 == 0)
        {
-      
-      for(int i = 0; i < 300; i++) {
-       __delay_us (2000);
-      
-      }
- 
-       }
+          playnote(0,0);
 
+          __delay_ms(0);
+       
+       }
 
         // Activate bootloader if SW1 is pressed.
         if(SW1 == 0)
