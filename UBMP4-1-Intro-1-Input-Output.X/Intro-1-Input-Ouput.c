@@ -21,16 +21,26 @@
 // TODO Set linker code offset to '800' under "Additional options" pull-down.
 #define PAUSE __delay_ms(220);
 #define REST __delay_ms(500);
-#define DUR 230
-#define _C playnote(DUR, 183206);
-#define _D playnote(DUR, 163265);
-#define _E playnote(DUR, 150);
-#define  E playnote(310, 150);
-#define _G playnote(DUR, 50);
+#define DUR 170
+#define NOTESCALINGFACTOR 200
+#define _C playnote(DUR, 183206/NOTESCALINGFACTOR);
+#define _D playnote(DUR, 163265/NOTESCALINGFACTOR);
+#define _E playnote(DUR, 145896/NOTESCALINGFACTOR);
+#define  E playnote(750, 145896/NOTESCALINGFACTOR);
+#define _G playnote(DUR, 122448/NOTESCALINGFACTOR);
 
+
+#define HA playnote(DUR, 145896/NOTESCALINGFACTOR);
+#define SHI playnote(DUR, 145896/NOTESCALINGFACTOR);
+#define RE playnote(DUR, 91778/NOTESCALINGFACTOR);
+#define SO playnote(DUR, 97363/NOTESCALINGFACTOR);
+#define RI playnote(DUR, 109090/NOTESCALINGFACTOR);
+#define YO playnote(300, 145896/NOTESCALINGFACTOR);
+#define YO2 playnote(320, 145896/NOTESCALINGFACTOR);
 // The main function is required, and the program begins executing from here.
 void playnote(int duration, int period )
 {
+    //int adjustedperiod = period/NOTESCALINGFACTOR;
     for(int i = 0; i < duration; i++) {
                BEEPER = !BEEPER;
                ;
@@ -69,7 +79,7 @@ int main(void)
         
         // Add code for your Program Analysis and Programming Activities here:
         
-        Jingle bells
+        
         
         // Make a tone while SW5 is held
        if(SW5 == 0)
@@ -85,14 +95,14 @@ int main(void)
        
        }
        
-       Padoru
+       
 
        // Make a tone while SW4 is held
        if(SW4 == 0)
        {
-          playnote(0,0);
-
-          __delay_ms(0);
+          HA PAUSE SHI PAUSE RE PAUSE SO PAUSE RI PAUSE YO
+          REST
+          HA PAUSE SHI PAUSE RE PAUSE SO PAUSE RI PAUSE YO2
        
        }
 
