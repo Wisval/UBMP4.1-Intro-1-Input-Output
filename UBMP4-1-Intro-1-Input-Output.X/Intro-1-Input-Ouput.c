@@ -30,13 +30,26 @@
 #define _G playnote(DUR, 122448/NOTESCALINGFACTOR);
 
 
-#define HA playnote(DUR, 145896/NOTESCALINGFACTOR);
-#define SHI playnote(DUR, 145896/NOTESCALINGFACTOR);
-#define RE playnote(DUR, 91778/NOTESCALINGFACTOR);
-#define SO playnote(DUR, 97363/NOTESCALINGFACTOR);
-#define RI playnote(DUR, 109090/NOTESCALINGFACTOR);
+#define HA playnote(100, 145896/NOTESCALINGFACTOR);
+#define SHI playnote(100, 145896/NOTESCALINGFACTOR);
+#define RE playnote(100, 91778/NOTESCALINGFACTOR);
+#define SO playnote(100, 97363/NOTESCALINGFACTOR);
+#define RI playnote(100, 109090/NOTESCALINGFACTOR);
 #define YO playnote(300, 145896/NOTESCALINGFACTOR);
-#define YO2 playnote(320, 145896/NOTESCALINGFACTOR);
+#define YO2 playnote(320, 137535/NOTESCALINGFACTOR);
+#define SU playnote(100, 137535/NOTESCALINGFACTOR);
+#define KI playnote(100, 137535/NOTESCALINGFACTOR);
+#define MI playnote(100, 81771/NOTESCALINGFACTOR);
+#define HAA playnote(100, 91778/NOTESCALINGFACTOR);
+#define RA playnote(100, 97363/NOTESCALINGFACTOR);
+#define WO playnote(330, 122448/NOTESCALINGFACTOR);
+#define PA playnote(100, 72837/NOTESCALINGFACTOR);
+#define DO playnote(100, 72837/NOTESCALINGFACTOR);
+#define RU playnote(100, 72847/NOTESCALINGFACTOR);
+#define PAA playnote(120, 81771/NOTESCALINGFACTOR);
+#define DOO playnote(120, 91778/NOTESCALINGFACTOR);
+#define RUU playnote(500, 92178/NOTESCALINGFACTOR);
+#define UU playnote(200, 92178/NOTESCALINGFACTOR);
 // The main function is required, and the program begins executing from here.
 void playnote(int duration, int period )
 {
@@ -103,6 +116,10 @@ int main(void)
           HA PAUSE SHI PAUSE RE PAUSE SO PAUSE RI PAUSE YO
           REST
           HA PAUSE SHI PAUSE RE PAUSE SO PAUSE RI PAUSE YO2
+          REST
+          SU PAUSE KI PAUSE MI PAUSE HAA PAUSE RA PAUSE WO 
+          REST
+          PA PAUSE DO PAUSE RU PAUSE PAA PAUSE DOO PAUSE RUU UU 
        
        }
 
