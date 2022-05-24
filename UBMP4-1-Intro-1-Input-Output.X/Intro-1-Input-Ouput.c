@@ -91,13 +91,23 @@ int main(void)
         }
         
         // Add code for your Program Analysis and Programming Activities here:
-          if(SW3 == 0)
+      
+        // Momentary button using if structure
+        if(SW3 == 0)
         {
-            LATC = 0b00000000;
-            __delay_ms(100);
-            LATC = 0b11110000;
-            __delay_ms(100);
+            LED4 = 1;
         }
+        else
+        {
+            LED4 = 0;
+        }
+
+        // Momentary button using while structure
+        while(SW4 == 0)
+        {
+            LED5 = 1;
+        }
+        LED5 = 0;
 
         
         
@@ -118,7 +128,7 @@ int main(void)
        
 
        // Make a tone while SW4 is held
-       if(SW4 == 0)
+       if(SW5 == 0)
        {
           HA PAUSE SHI PAUSE RE PAUSE SO PAUSE RI PAUSE YO
           REST
